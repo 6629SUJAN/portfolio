@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sujan Nepal</title>
+  <meta name="description" content="Sujan Nepal — BIT 6th Semester student from Kathmandu. Web development, Arduino, photography & more." />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">SN</div>
+      <span class="loader-text">Initializing<span class="dots">...</span></span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">Sujan Nepal<span class="logo-dot">.</span></a>
+    <div class="hamburger" id="hamburger" role="button" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-image-wrapper">
+        <div class="hero-image-frame">
+          <img src="first.jpeg" alt="Sujan Nepal" class="hero-image" />
+        </div>
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          <span>Open to opportunities</span>
+        </div>
+      </div>
+      <div class="hero-text">
+        <p class="hero-greeting"><span class="wave">👋</span> Hey there, I'm</p>
+        <h1 class="hero-name">Sujan Nepal</h1>
+        <p class="hero-subtitle">
+          <span id="typed-text"></span><span class="cursor">|</span>
+        </p>
+        <p class="hero-desc">
+          6th semester BIT student exploring the world of code, one project at a time 🚀
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-num" data-target="5">0</span>
+            <span class="stat-label">Completed<br>Semesters</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num" data-target="5">0</span>
+            <span class="stat-label">Projects<br>Built</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num" data-target="2">0</span>
+            <span class="stat-label">Events<br>Attended</span>
+          </div>
+        </div>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> View Projects</a>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact Me</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-down" aria-hidden="true">
+      <span class="scroll-text">Scroll</span>
+      <span class="scroll-arrow"></span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-grid">
+        <div class="about-card glass">
+          <div class="about-avatar">
+            <div class="avatar-ring"></div>
+            <div class="avatar-inner"><img src="Profile.jpeg" alt="Sujan Nepal" /></div>
+          </div>
+          <div class="about-social-mini">
+            <a href="https://github.com/6629SUJAN" target="_blank" class="social-mini-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sujan-nepal-90416527b/" target="_blank" class="social-mini-btn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/raju.sujan.77/" target="_blank" class="social-mini-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>Hey! I'm <strong>Sujan Nepal</strong>, a BIT student currently in my 6th semester at Purbanchal University. I love experimenting with tech and building things from scratch.</p>
+          <p style="margin-top:14px;">I got into programming because I enjoy solving real problems. Outside of studies, I'm into <strong>photography</strong>, exploring new apps, and constantly learning something new through tutorials and hands-on projects.</p>
+          <p style="margin-top:14px;">I'm not an expert yet — just someone who's genuinely curious about technology and working hard to improve every day.</p>
+          <div class="about-tags">
+            <span class="tag">📷 Photography</span>
+            <span class="tag">💻 Web Dev</span>
+            <span class="tag">🤖 Arduino</span>
+            <span class="tag">🎬 Video Editing</span>
+            <span class="tag">☕ Java</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-timeline">
+        <div class="edu-card glass" data-aos>
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-info">
+            <div class="edu-header">
+              <h3>Bachelor of Information Technology (BIT)</h3>
+              <span class="edu-badge">Current</span>
+            </div>
+            <p class="edu-college"><i class="fas fa-map-marker-alt"></i> Purbanchal University · Kathmandu, Nepal</p>
+            <p class="edu-year"><i class="fas fa-calendar-alt"></i> 6th Semester · 2023 – Present</p>
+            <div class="edu-courses">
+              <span>Artificial Intelligence</span>
+              <span>Management Information System</span>
+              <span>Data Warehousing & Mining</span>
+              <span>Simulations & Modeling</span>
+              <span>Software Engineering</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card glass" data-aos>
+          <div class="edu-icon"><i class="fas fa-book-open"></i></div>
+          <div class="edu-info">
+            <div class="edu-header">
+              <h3>High School Education</h3>
+              <span class="edu-badge edu-badge-done">Completed</span>
+            </div>
+            <p class="edu-college"><i class="fas fa-map-marker-alt"></i> United Academy · Kathmandu, Nepal</p>
+            <p class="edu-year"><i class="fas fa-flask"></i> Science Faculty</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My <span>Skills</span></h2>
+      <p class="section-sub">Still learning — but here's what I can work with so far!</p>
+      <div class="skills-grid">
+        <div class="skill-card glass" data-aos><div class="skill-icon">🌐</div><h4>HTML</h4><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div><div class="skill-footer"><span class="skill-level">Intermediate</span><span class="skill-percent">75%</span></div></div>
+        <div class="skill-card glass" data-aos><div class="skill-icon">🎨</div><h4>CSS</h4><div class="skill-bar"><div class="skill-fill" data-width="65"></div></div><div class="skill-footer"><span class="skill-level">Intermediate</span><span class="skill-percent">65%</span></div></div>
+        <div class="skill-card glass" data-aos><div class="skill-icon">⚡</div><h4>JavaScript</h4><div class="skill-bar"><div class="skill-fill" data-width="45"></div></div><div class="skill-footer"><span class="skill-level">Learning</span><span class="skill-percent">45%</span></div></div>
+        <div class="skill-card glass" data-aos><div class="skill-icon">☕</div><h4>Java</h4><div class="skill-bar"><div class="skill-fill" data-width="55"></div></div><div class="skill-footer"><span class="skill-level">Intermediate</span><span class="skill-percent">55%</span></div></div>
+        <div class="skill-card glass" data-aos><div class="skill-icon">🗄️</div><h4>SQL / MySQL</h4><div class="skill-bar"><div class="skill-fill" data-width="50"></div></div><div class="skill-footer"><span class="skill-level">Intermediate</span><span class="skill-percent">50%</span></div></div>
+        <div class="skill-card glass" data-aos><div class="skill-icon">🤖</div><h4>Arduino</h4><div class="skill-bar"><div class="skill-fill" data-width="35"></div></div><div class="skill-footer"><span class="skill-level">Beginner</span><span class="skill-percent">35%</span></div></div>
+        <div class="skill-card glass" data-aos><div class="skill-icon">📷</div><h4>Photography</h4><div class="skill-bar"><div class="skill-fill" data-width="70"></div></div><div class="skill-footer"><span class="skill-level">Hobby</span><span class="skill-percent">70%</span></div></div>
+        <div class="skill-card glass" data-aos><div class="skill-icon">🎬</div><h4>Video Editing</h4><div class="skill-bar"><div class="skill-fill" data-width="50"></div></div><div class="skill-footer"><span class="skill-level">Basic</span><span class="skill-percent">50%</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">My <span>Projects</span></h2>
+      <p class="section-sub">Small projects I built while learning — nothing fancy, but I'm proud of them!</p>
+      <div class="projects-grid">
+
+        <div class="project-card glass project-card--featured" data-aos>
+          <div class="project-img" style="background: linear-gradient(135deg,#1a1a2e,#0f3460,#16213e)">
+            <span class="project-emoji">⚕️</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span class="project-num">01</span><span class="project-year">4th Semester</span></div>
+            <h3>Medical Management System</h3>
+            <p>A medical management system built in Java using NetBeans IDE and XAMPP. Manages patient records, appointments, and basic hospital workflow — my first complete desktop application.</p>
+            <div class="project-tags"><span>Java</span><span>NetBeans</span><span>MySQL</span><span>XAMPP</span></div>
+            <div class="project-links">
+              <a href="https://github.com/6629SUJAN/Medical-management-system/tree/main" class="btn-sm" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass project-card--wip" data-aos>
+          <div class="project-img" style="background: linear-gradient(135deg,#0d1117,#161b22,#1f2937)">
+            <span class="project-emoji">🌐</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span class="project-num">02</span><span class="project-year wip-badge">In Progress</span></div>
+            <h3>Personal Portfolio Website</h3>
+            <p>This portfolio itself — built from scratch with pure HTML, CSS and vanilla JS. Features a Three.js 3D hero, animated skill bars, typing effects, and fully responsive design.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Three.js</span></div>
+            <div class="project-links">
+              <span class="btn-sm btn-sm--ghost"><i class="fas fa-eye"></i> You're viewing it!</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & VOLUNTEERING -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience & <span>Volunteering</span></h2>
+      <div class="ach-list">
+        <div class="ach-item glass" data-aos>
+          <div class="ach-icon"><i class="fas fa-robot"></i></div>
+          <div><h4>International AI and Robotics in Nepal</h4><p>Participated in an international AI and robotics program, gaining hands-on experience with cutting-edge technologies.</p></div>
+        </div>
+        <div class="ach-item glass" data-aos>
+          <div class="ach-icon"><i class="fas fa-briefcase"></i></div>
+          <div><h4>Management and IT Career Expo</h4><p>Volunteered and participated in a management and IT career expo, exploring career opportunities in the tech industry.</p></div>
+        </div>
+        <div class="ach-item glass" data-aos>
+          <div class="ach-icon"><i class="fas fa-rocket"></i></div>
+          <div><h4>The Runway Open House for Career Development</h4><p>Attended The Runway open house event focused on career development and professional growth in the technology field.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="container">
+      <h2 class="section-title">Activities & <span>Achievements</span></h2>
+      <div class="ach-list">
+        <div class="ach-item glass" data-aos>
+          <div class="ach-icon"><i class="fas fa-microchip"></i></div>
+          <div><h4>IT Workshop — Robotics & IoT</h4><p>Participated in a 2-day hands-on workshop organized by our college tech club covering robotics and IoT fundamentals.</p></div>
+        </div>
+        <div class="ach-item glass" data-aos>
+          <div class="ach-icon"><i class="fas fa-trophy"></i></div>
+          <div><h4>College Science Exhibition</h4><p>Presented the vacuum robot project at our college's annual science exhibition, showcasing hardware and software integration.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <p class="section-sub">Feel free to reach out — I'm always happy to connect!</p>
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <p class="contact-intro">Whether it's a project idea, a question, or just a hello — my inbox is always open.</p>
+          <a href="https://www.facebook.com/raju.sujan.77" class="contact-link glass" target="_blank">
+            <i class="fab fa-facebook"></i><span>Sujan Nepal</span><i class="fas fa-arrow-right contact-arrow"></i>
+          </a>
+          <a href="mailto:sujann045@gmail.com" class="contact-link glass">
+            <i class="fas fa-envelope"></i><span>sujann045@gmail.com</span><i class="fas fa-arrow-right contact-arrow"></i>
+          </a>
+          <a href="https://github.com/6629SUJAN" class="contact-link glass" target="_blank">
+            <i class="fab fa-github"></i><span>github.com/6629SUJAN</span><i class="fas fa-arrow-right contact-arrow"></i>
+          </a>
+          <a href="https://www.instagram.com/raju.sujan.77/" class="contact-link glass" target="_blank">
+            <i class="fab fa-instagram"></i><span>@raju.sujan.77</span><i class="fas fa-arrow-right contact-arrow"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/sujan-nepal-90416527b/" class="contact-link glass" target="_blank">
+            <i class="fab fa-linkedin"></i><span>sujan-nepal-90416527b</span><i class="fas fa-arrow-right contact-arrow"></i>
+          </a>
+        </div>
+        <!-- These EmailJS values should match your Service ID, Template ID, and Public Key. -->
+        <form class="contact-form glass" id="contactForm" novalidate data-service-id="service_xrmj3j8" data-template-id="template_x809z6f" data-public-key="rWdAnM4Fd5VvqVRt1">
+          <h3 class="form-title">Send a Message</h3>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Sujan Nepal" required minlength="2" maxlength="50" autocomplete="name"/>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="sujan@example.com" required maxlength="80" autocomplete="email"/>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" minlength="10" maxlength="1000" placeholder="Hey Sujan, I wanted to say..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span class="btn-text">Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <p class="form-note" id="formMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Sujan<span class="logo-dot">.</span></div>
+      <p class="footer-tagline">Still learning. Still building. 🚀</p>
+      <div class="footer-links">
+        <a href="https://github.com/6629SUJAN" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sujan-nepal-90416527b/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/raju.sujan.77/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:sujann045@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Sujan Nepal · BIT 6th Semester · Kathmandu, Nepal</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
